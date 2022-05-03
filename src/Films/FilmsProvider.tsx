@@ -9,9 +9,11 @@ interface FilmsProviderProps {
 
 export default function FilmsProvider({ children }: FilmsProviderProps) {
   const [films, setFilms] = useState<Film[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   async function getFilms() {
     await api.get("/films").then((response) => setFilms(response.data.results));
+    setIsLoading(false);
   }
 
   useEffect(() => {
@@ -19,6 +21,8 @@ export default function FilmsProvider({ children }: FilmsProviderProps) {
   }, []);
 
   return (
-    <FilmsContext.Provider value={{ films }}>{children}</FilmsContext.Provider>
+    <FilmsContext.Provider value={{ films, isLoading }}>
+      {children}
+    </FilmsContext.Provider>
   );
 }
