@@ -28,6 +28,7 @@ const GlobalStyles = createGlobalStyle`
     body {
         background-color: var(--black);
         color: var(--white);
+        font-family: "Poppins", sans-serif;
     }
 
     button:hover {
