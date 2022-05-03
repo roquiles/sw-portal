@@ -29,6 +29,8 @@ export default function AuthProvider({ children }: AuthProviderProps) {
   function signOut() {
     setIsLogged(false);
     setUser(null);
+
+    localStorage.setItem("SWLogin", JSON.stringify(false));
   }
 
   return (
