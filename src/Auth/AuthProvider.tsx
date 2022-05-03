@@ -1,5 +1,5 @@
 import { ReactNode, useState } from "react";
-import { UserType } from "../types/types";
+
 import AuthContext from "./AuthContext";
 
 interface AuthProviderProps {
@@ -7,14 +7,12 @@ interface AuthProviderProps {
 }
 
 export default function AuthProvider({ children }: AuthProviderProps) {
-  const [user, setUser] = useState<UserType>(null);
   const [isLogged, setIsLogged] = useState(
     localStorage.getItem("SWLogin") === "true"
   );
 
   function signIn(username: string, password: string) {
     if (username === "admin" && password === "Admin123!") {
-      setUser(username);
       setIsLogged(true);
 
       localStorage.setItem("SWLogin", JSON.stringify(true));
@@ -28,13 +26,12 @@ export default function AuthProvider({ children }: AuthProviderProps) {
 
   function signOut() {
     setIsLogged(false);
-    setUser(null);
 
     localStorage.setItem("SWLogin", JSON.stringify(false));
   }
 
   return (
-    <AuthContext.Provider value={{ user, signIn, signOut, isLogged }}>
+    <AuthContext.Provider value={{ signIn, signOut, isLogged }}>
       {children}
     </AuthContext.Provider>
   );
