@@ -28,7 +28,6 @@ export const Container = styled.main`
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    font-family: "Poppins", sans-serif;
 
     h3 {
       margin-bottom: 1.5rem;
