@@ -1,8 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login/index";
 import Films from "./pages/Films";
-import RequireAuth from "./pages/RequireAuth";
+import RequireAuth from "./Auth/RequireAuth";
 import Home from "./pages/Home";
+import FilmDetail from "./pages/FilmDetail";
 
 export default function AppRoutes() {
   return (
@@ -13,6 +14,14 @@ export default function AppRoutes() {
         element={
           <RequireAuth>
             <Films />
+          </RequireAuth>
+        }
+      />
+      <Route
+        path="/films/:filmId"
+        element={
+          <RequireAuth>
+            <FilmDetail />
           </RequireAuth>
         }
       />
