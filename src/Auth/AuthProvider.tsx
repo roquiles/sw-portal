@@ -1,4 +1,5 @@
 import { ReactNode, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import AuthContext from "./AuthContext";
 
@@ -7,6 +8,8 @@ interface AuthProviderProps {
 }
 
 export default function AuthProvider({ children }: AuthProviderProps) {
+  const navigate = useNavigate();
+
   const [isLogged, setIsLogged] = useState(
     localStorage.getItem("SWLogin") === "true"
   );
@@ -26,8 +29,8 @@ export default function AuthProvider({ children }: AuthProviderProps) {
 
   function signOut() {
     setIsLogged(false);
-
     localStorage.setItem("SWLogin", JSON.stringify(false));
+    navigate("/login");
   }
 
   return (
