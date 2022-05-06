@@ -12,6 +12,19 @@ export interface Film {
   species: string[];
 }
 
+export interface DataType {
+  people: ResourceType[];
+  peopleRequestHasFinished: boolean;
+  starships: ResourceType[];
+  starshipsRequestHasFinished: boolean;
+  planets: ResourceType[];
+  planetsRequestHasFinished: boolean;
+  vehicles: ResourceType[];
+  vehiclesRequestHasFinished: boolean;
+  species: ResourceType[];
+  speciesRequestHasFinished: boolean;
+}
+
 export interface PosterMapperType {
   [key: string]: string;
 }
