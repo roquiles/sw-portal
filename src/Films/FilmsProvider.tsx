@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { ReactNode, useEffect, useState, useCallback } from "react";
 import { api } from "../services/api";
 import { DataType, Film } from "../types/types";

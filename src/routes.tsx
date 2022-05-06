@@ -27,7 +27,7 @@ export default function AppRoutes() {
         }
       />
       <Route path="/login" element={<Login />} />
-      <Route path="404" element={<NotFound />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

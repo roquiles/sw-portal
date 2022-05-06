@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Header from "../../Components/Header";
@@ -25,8 +26,6 @@ export default function FilmDetail() {
   const film = films.find((film) => film.episode_id === parseInt(filmId));
   const poster = posterMapper[`episode${film?.episode_id}`];
 
-  console.log(film);
-
   useEffect(() => {
     if (!film) {
       getFilms();
@@ -47,7 +46,7 @@ export default function FilmDetail() {
       data.vehiclesRequestHasFinished
     ) {
       if (film === undefined) {
-        return navigate("/404");
+        return navigate("*");
       }
 
       setCharacters(getResources(film as Film, "people"));
