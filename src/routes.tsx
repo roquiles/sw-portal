@@ -4,6 +4,7 @@ import Films from "./pages/Films";
 import RequireAuth from "./Auth/RequireAuth";
 import Home from "./pages/Home";
 import FilmDetail from "./pages/FilmDetail";
+import NotFound from "./pages/NotFound";
 
 export default function AppRoutes() {
   return (
@@ -26,6 +27,7 @@ export default function AppRoutes() {
         }
       />
       <Route path="/login" element={<Login />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
