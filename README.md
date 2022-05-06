@@ -2,7 +2,7 @@
 
 Protótipos das telas disponíveis [AQUI](https://www.figma.com/file/Z0vIiqLMueoIgdrXmVNdiD/Star-Wars-Portal?node-id=0%3A1)
 
-Projeto rodando [AQUI]().
+Projeto rodando [AQUI](https://sw-portal.herokuapp.com/login).
 
 ## Descrição
 
