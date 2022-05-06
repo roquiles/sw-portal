@@ -47,7 +47,7 @@ export default function FilmDetail() {
       data.vehiclesRequestHasFinished
     ) {
       if (film === undefined) {
-        return navigate("*");
+        return navigate("/404");
       }
 
       setCharacters(getResources(film as Film, "people"));
