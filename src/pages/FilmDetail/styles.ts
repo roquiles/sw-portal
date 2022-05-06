@@ -6,9 +6,11 @@ export const Container = styled.div`
   font-weight: 200;
 
   display: flex;
+
+  justify-content: center;
   flex-direction: column-reverse;
 
-  & > div {
+  & > #poster_container {
     width: 100%;
     height: 15rem;
     overflow: hidden;
@@ -22,7 +24,7 @@ export const Container = styled.div`
     }
   }
 
-  div > img {
+  #poster_container > img {
     width: 100%;
     transform: translateY(-5rem);
     margin-bottom: 1rem;
@@ -46,6 +48,13 @@ export const Container = styled.div`
         color: var(--yellow);
       }
     }
+  }
+
+  #spinner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   @media (min-width: 720px) {
@@ -83,10 +92,6 @@ export const InfosContainer = styled.section`
 
   #abstract {
     margin-top: 1rem;
-  }
-
-  #spinner {
-    align-self: center;
   }
 
   @media (min-width: 720px) {
