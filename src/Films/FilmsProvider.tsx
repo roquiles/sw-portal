@@ -90,7 +90,9 @@ export default function FilmsProvider({ children }: FilmsProviderProps) {
   }, []);
 
   return (
-    <FilmsContext.Provider value={{ films, isLoading, getResources }}>
+    <FilmsContext.Provider
+      value={{ films, isLoading, getResources, getFilms, getEntireData, data }}
+    >
       {children}
     </FilmsContext.Provider>
   );
