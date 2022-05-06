@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   padding: 1.5rem 2rem;
 
   h2 {
@@ -9,16 +14,11 @@ export const Container = styled.div`
     font-weight: bold;
     margin-bottom: 1.5rem;
   }
-
-  @media (min-width: 720px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
 `;
 
 export const FilmContainer = styled.div`
+  width: 100%;
+  height: 35rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
@@ -32,8 +32,8 @@ export const FilmContainer = styled.div`
 `;
 
 export const FilmCard = styled.div`
-  /* min-width: 12rem; */
-  min-height: 12rem;
+  min-height: 12px;
+  height: 100%;
   border-radius: 0.75rem;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
 
@@ -50,7 +50,7 @@ export const FilmCard = styled.div`
     position: absolute;
     border-radius: 0 0 0.75rem 0.75rem;
     bottom: 0;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
     text-align: center;
     background: rgba(0, 0, 0, 0.9);
     min-height: 2.5rem;
